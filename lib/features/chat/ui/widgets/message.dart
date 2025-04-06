@@ -13,7 +13,7 @@ class Message extends StatelessWidget {
       return text;
     }
 
-    return text.replaceAll('**', '');
+    return text.replaceAll('**', '').replaceAll('##', '');
   }
 
   @override
