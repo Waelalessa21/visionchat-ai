@@ -1,6 +1,5 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 void showToastMessage(
@@ -12,6 +11,7 @@ void showToastMessage(
   FToast fToast = FToast();
   final theme = Theme.of(context);
   final isDarkMode = theme.brightness == Brightness.dark;
+  final screenWidth = MediaQuery.of(context).size.width;
 
   fToast.init(context);
 
@@ -25,7 +25,6 @@ void showToastMessage(
               : theme.colorScheme.primary.withOpacity(0.1));
 
   final Color textColor = theme.colorScheme.onSurface;
-
   final Color borderColor =
       isDarkMode
           ? (isError
@@ -38,9 +37,11 @@ void showToastMessage(
   Widget toast = FadeInUp(
     from: 20,
     child: Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+      width: screenWidth * 0.9,
+      margin: const EdgeInsets.symmetric(horizontal: 16),
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20.sp),
+        borderRadius: BorderRadius.circular(10),
         gradient: LinearGradient(
           colors: [
             backgroundColor.withOpacity(0.9),
@@ -52,9 +53,9 @@ void showToastMessage(
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.1),
-            blurRadius: 10,
-            spreadRadius: 2,
-            offset: Offset(0, 4),
+            blurRadius: 6,
+            spreadRadius: 1,
+            offset: const Offset(0, 2),
           ),
         ],
         border: Border.all(color: borderColor, width: 1),
@@ -62,24 +63,30 @@ void showToastMessage(
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Image.asset(iconPath, width: 24.w, height: 24.h),
-          SizedBox(width: 16.w),
+          Image.asset(iconPath, width: 20, height: 20),
+          const SizedBox(width: 10),
           Expanded(
             child: Text(
               message,
               style: TextStyle(
                 color: textColor,
-                fontSize: 14.sp,
+                fontSize: 12,
                 fontWeight: FontWeight.w500,
               ),
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
             ),
           ),
-          SizedBox(width: 16.w),
+          const SizedBox(width: 10),
           GestureDetector(
             onTap: () {
               fToast.removeCustomToast();
             },
-            child: Icon(Icons.close, size: 20.w),
+            child: Icon(
+              Icons.close,
+              color: textColor.withOpacity(0.6),
+              size: 16,
+            ),
           ),
         ],
       ),

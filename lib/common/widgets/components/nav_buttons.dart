@@ -36,7 +36,7 @@ class MobileNavigationButtons extends StatelessWidget {
                 isLastStep
                     ? StartButton(
                       onPressed: () {
-                        context.pushReplacementNamed(Routes.login);
+                        context.pushNamed(Routes.login);
                       },
                       responsive: true,
                     )
@@ -82,7 +82,7 @@ class DesktopNavigationButtons extends StatelessWidget {
                 isLastStep
                     ? StartButton(
                       onPressed: () {
-                        context.pushReplacementNamed(Routes.login);
+                        context.pushNamed(Routes.login);
                       },
                       responsive: false,
                     )
