@@ -16,7 +16,7 @@ class TextAndIcon extends StatelessWidget {
 
     return GestureDetector(
       onTap: () {
-        context.pushNamed(Routes.chat);
+        context.pushNamed(Routes.waiting);
       },
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,

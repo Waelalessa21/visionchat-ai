@@ -61,7 +61,7 @@ class _RegisterFormState extends State<RegisterForm> {
               );
 
               Future.delayed(const Duration(milliseconds: 500), () {
-                context.pushNamed(Routes.chat);
+                context.pushNamed(Routes.waiting);
               });
             }
 

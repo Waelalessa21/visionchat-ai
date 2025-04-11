@@ -27,10 +27,15 @@
         "events": "Events",
         "signIn": "Login",
       "signUp": "Sign up",
+      "notifytitle" :"Get notified when we launch",
+      "great" :"thanks for registration, see u soon!",
+      "estimated_launch": "Esimated Launch: Coming next week",
+
       "accountcreatedsuccess": "account created successfully, enjoy!",
       "loginSuccessful": "Welcome again!",
-
-
+      "notify": "Notify Me",
+"waitingtitle": "Apolosies! Service under review now.",
+  "waitingdesc": "We are working hard to bring an amzing tool",
       "discoverKingdom": "Discover the Kingdom Smartly and Easily",
       "landingDescription": "We provide you with an exceptional tourist experience with an intelligent assistant that understands your needs and provides accurate and instant information about tourist attractions and services in the Kingdom of Saudi Arabia",
       "startJourneyButton": "Start Your Journey Now",

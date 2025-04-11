@@ -50,7 +50,7 @@ class _LoginFormState extends State<LoginForm> {
               );
 
               Future.delayed(const Duration(milliseconds: 500), () {
-                context.pushNamed(Routes.chat);
+                context.pushNamed(Routes.waiting);
               });
             } else if (context.read<AuthProvider>().errorMessage != null) {
               showToastMessage(
