@@ -43,16 +43,6 @@ class _WaitingScreenState extends State<WaitingScreen>
     return Scaffold(
       body: SafeArea(
         child: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [
-                Theme.of(context).colorScheme.surface,
-                Theme.of(context).colorScheme.surfaceVariant,
-              ],
-            ),
-          ),
           child: Column(
             children: [
               Responsive(
